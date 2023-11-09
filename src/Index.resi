@@ -14,10 +14,10 @@ let \"Elements": {
   "stripe": Js.Promise.t<OrcaJs.switchInstance>,
 } => React.element
 
-let \"HyperElements": {
+let \"PaygloElements": {
   "children": React.element,
   "options": Js.Json.t,
-  "hyper": Js.Promise.t<OrcaJs.switchInstance>,
+  "payglo": Js.Promise.t<OrcaJs.switchInstance>,
 } => React.element
 
 let \"PaymentElement": {
@@ -123,7 +123,7 @@ let \"CardCVCWidget": {
 
 let useStripe: unit => Context.switchContextType
 
-let useHyper: unit => Context.switchContextType
+let usePayglo: unit => Context.switchContextType
 
 let useElements: unit => Context.elementsType
 

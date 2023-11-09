@@ -1,1 +1,1 @@
-declare module '@payglo/react-hyper-js';
+declare module "@payglo/react-payglo-js";

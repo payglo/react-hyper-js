@@ -49,15 +49,15 @@ module Elements2 = {
   }
 }
 
-module HyperElements2 = {
+module PaygloElements2 = {
   @react.component
-  let make = (~children, ~hyper: Js.Promise.t<OrcaJs.switchInstance>, ~options: Js.Json.t) => {
+  let make = (~children, ~payglo: Js.Promise.t<OrcaJs.switchInstance>, ~options: Js.Json.t) => {
     let elementOptions = options->Context.elementsOptionObjMapper
     let (switchState, setSwitchState) = React.useState(() => Context.defaultSwitchContext)
     let (elementsState, setElementsState) = React.useState(() => Context.defaultElementsContext)
 
     React.useEffect0(() => {
-      hyper->Js.Promise.then_((switchInstance: OrcaJs.switchInstance) => {
+      payglo->Js.Promise.then_((switchInstance: OrcaJs.switchInstance) => {
         let orcaElementsConfig = switchInstance.elements(options)
         let newElemValues: Context.elementsType = {
           options: elementOptions,
@@ -92,15 +92,15 @@ module HyperElements2 = {
 
 let \"Elements" = Elements2.make
 
-let \"HyperElements" = HyperElements2.make
+let \"PaygloElements" = PaygloElements2.make
 
-let useHyper = () => {
+let usePayglo = () => {
   React.useContext(Context.switchContext)
 }
 
 let useStripe = () => {
-  Js.Console.warn("useStripe() is deprecated. Use useHyper() instead")
-  useHyper()
+  Js.Console.warn("useStripe() is deprecated. Use usePayglo() instead")
+  usePayglo()
 }
 let useWidgets = () => {
   React.useContext(Context.elementsContext)

@@ -61,9 +61,9 @@ function Index$Elements2(Props) {
   return React.createElement(Context.SwitchContextProvider.make, Context.SwitchContextProvider.makeProps(match[0], React.createElement(Context.ElementsContextProvider.make, Context.ElementsContextProvider.makeProps(match$1[0], children, undefined)), undefined));
 }
 
-function Index$HyperElements2(Props) {
+function Index$PaygloElements2(Props) {
   var children = Props.children;
-  var hyper = Props.hyper;
+  var payglo = Props.payglo;
   var options = Props.options;
   var elementOptions = Context.elementsOptionObjMapper(options);
   var match = React.useState(function () {
@@ -112,17 +112,17 @@ function Index$HyperElements2(Props) {
                           return newElemValues;
                         }));
                   return Promise.resolve(switchValClone);
-                }), hyper);
+          }), payglo);
         }), []);
   return React.createElement(Context.SwitchContextProvider.make, Context.SwitchContextProvider.makeProps(match[0], React.createElement(Context.ElementsContextProvider.make, Context.ElementsContextProvider.makeProps(match$1[0], children, undefined)), undefined));
 }
 
-function useHyper(param) {
+function usePayglo(param) {
   return React.useContext(Context.switchContext);
 }
 
 function useStripe(param) {
-  console.warn("useStripe() is deprecated. Use useHyper() instead");
+  console.warn("useStripe() is deprecated. Use usePayglo() instead");
   return React.useContext(Context.switchContext);
 }
 
@@ -274,7 +274,7 @@ function Index$CardExpiry2(Props) {
 
 var Elements = Index$Elements2;
 
-var HyperElements = Index$HyperElements2;
+var PaygloElements = Index$PaygloElements2;
 
 var PaymentElement = Index$PaymentElement2;
 
@@ -298,7 +298,7 @@ var CardCVCWidget = Index$CardCVC2;
 
 export {
   Elements ,
-  HyperElements ,
+  PaygloElements ,
   PaymentElement ,
   UnifiedCheckout ,
   CardElement ,
@@ -310,7 +310,7 @@ export {
   CardCVCElement ,
   CardCVCWidget ,
   useStripe ,
-  useHyper ,
+  usePayglo ,
   useElements ,
   useWidgets ,
 }
